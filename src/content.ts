@@ -1,3 +1,5 @@
+import { publicUrl } from "./lib/asset"
+
 export const company = {
   name: "Locadora Brasil",
   tagline: "Locação de máquinas pesadas",
@@ -12,8 +14,6 @@ export const company = {
 
 export const phones = [
   { name: "Ian", display: "(31) 99451-3393", e164: "5531994513393" },
-  { name: "Carlinhos", display: "(31) 98828-4454", e164: "5531988284454" },
-  { name: "Iago", display: "(31) 99757-4454", e164: "5531997574454" },
 ]
 
 export const nav = [
@@ -26,7 +26,7 @@ export const nav = [
 
 export const stats = [
   { value: "50 anos", label: "de experiência em obra" },
-  { value: "6 tipos", label: "de equipamentos na frota" },
+  { value: "7 tipos", label: "de equipamentos na frota" },
   { value: "Contagem", label: "base em Minas Gerais" },
   { value: "Entrega", label: "da máquina na sua obra" },
 ]
@@ -35,7 +35,7 @@ export const machines = [
   {
     id: "escavadeira",
     name: "Escavadeira hidráulica",
-    image: "/images/escavadeira-obra.jpg",
+    image: publicUrl("images/escavadeira-obra.jpg"),
     summary:
       "Corte, fundação, valas e demolição com alcance e estabilidade de esteira.",
     uses: ["Fundação", "Demolição", "Terraplenagem"],
@@ -43,23 +43,31 @@ export const machines = [
   {
     id: "retroescavadeira",
     name: "Retroescavadeira",
-    image: "/images/retroescavadeira.jpg",
+    image: publicUrl("images/retroescavadeira.jpg"),
     summary:
       "Versátil para cavar, carregar e finalizar — inclusive modelos 2025 na frota.",
     uses: ["Abertura de valas", "Carga", "Acabamento"],
   },
   {
+    id: "mini-escavadeira",
+    name: "Mini escavadeira",
+    image: publicUrl("images/mini-escavadeira.png"),
+    summary:
+      "Ideal para valas, acessos estreitos e acabamento em obras com pouco espaço.",
+    uses: ["Valas", "Espaços estreitos", "Fundação"],
+  },
+  {
     id: "mini-carregadeira",
     name: "Mini carregadeira",
-    image: "/images/demolicao.jpg",
+    image: publicUrl("images/mini-carregadeira.png"),
     summary:
       "Agilidade em espaços estreitos, pátio e serviços de acabamento na obra.",
-    uses: ["Pátio", "Interiores", "Acesso limitado"],
+    uses: ["Pátio", "Carga", "Acesso limitado"],
   },
   {
     id: "pa-carregadeira",
     name: "Pá carregadeira",
-    image: "/images/carregando.jpg",
+    image: publicUrl("images/pa-carregadeira.png"),
     summary:
       "Volume e ritmo para aterro, desaterro e carregamento de caminhões.",
     uses: ["Aterro", "Desaterro", "Carga"],
@@ -67,7 +75,7 @@ export const machines = [
   {
     id: "rolo",
     name: "Rolo compactador",
-    image: "/images/aterro.jpg",
+    image: publicUrl("images/rolo-compactador.png"),
     summary:
       "Compactação de solo e base para a obra assentar do jeito certo.",
     uses: ["Base", "Aterro", "Pavimentação"],
@@ -75,7 +83,7 @@ export const machines = [
   {
     id: "basculante",
     name: "Caminhões basculantes",
-    image: "/images/carregando.jpg",
+    image: publicUrl("images/carregando.jpg"),
     summary:
       "Leva e traz material com a mesma operação — terra, entulho e brita.",
     uses: ["Transporte", "Entulho", "Terra"],
@@ -120,12 +128,12 @@ export const steps = [
 ]
 
 export const gallery = [
-  { src: "/images/hero.jpg", alt: "Escavadeira SANY carregando caminhão no sol" },
-  { src: "/images/terraplenagem.jpg", alt: "Terraplenagem com escavadeira e retroescavadeira" },
-  { src: "/images/retro-obra.jpg", alt: "Retroescavadeira JCB em serviço interno" },
-  { src: "/images/transporte.jpg", alt: "Retroescavadeira JCB sendo transportada" },
-  { src: "/images/entrega.jpg", alt: "Escavadeira Komatsu no prancha para entrega" },
-  { src: "/images/escavadeira.jpg", alt: "Escavadeira Komatsu em via urbana" },
+  { src: publicUrl("images/hero.jpg"), alt: "Escavadeira SANY carregando caminhão no sol" },
+  { src: publicUrl("images/terraplenagem.jpg"), alt: "Terraplenagem com escavadeira e retroescavadeira" },
+  { src: publicUrl("images/retro-obra.jpg"), alt: "Retroescavadeira JCB em serviço interno" },
+  { src: publicUrl("images/transporte.jpg"), alt: "Retroescavadeira JCB sendo transportada" },
+  { src: publicUrl("images/entrega.jpg"), alt: "Escavadeira Komatsu no prancha para entrega" },
+  { src: publicUrl("images/escavadeira.jpg"), alt: "Escavadeira Komatsu em via urbana" },
 ]
 
 export const todayBoard = [

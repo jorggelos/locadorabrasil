@@ -1,10 +1,12 @@
+import { publicUrl } from "../lib/asset"
+
 export function About() {
   return (
-    <section id="empresa" className="bg-sand py-20 sm:py-24">
-      <div className="mx-auto grid max-w-6xl gap-12 px-5 lg:grid-cols-[1fr_1.05fr] lg:items-center">
-        <div>
+    <section id="empresa" className="bg-sand py-16 sm:py-24">
+      <div className="mx-auto grid min-w-0 max-w-6xl gap-10 px-4 sm:px-5 lg:grid-cols-[1fr_1.05fr] lg:items-center lg:gap-12">
+        <div className="min-w-0">
           <p className="section-kicker text-green">A empresa</p>
-          <h2 className="display mt-3 text-4xl leading-none text-blue-ink sm:text-6xl">
+          <h2 className="display mt-3 text-[2.15rem] leading-none text-blue-ink sm:text-6xl">
             Meio século no pó da obra.
           </h2>
           <p className="mt-6 text-base leading-relaxed text-muted sm:text-lg">
@@ -37,24 +39,24 @@ export function About() {
 
         <div className="grid grid-cols-2 gap-3 sm:gap-4">
           <img
-            src="/images/terraplenagem.jpg"
+            src={publicUrl("images/terraplenagem.jpg")}
             alt="Frente de terraplenagem com máquinas da Locadora Brasil"
-            className="h-56 w-full rounded-3xl object-cover sm:h-72"
+            className="h-40 w-full rounded-3xl object-cover sm:h-72"
           />
           <img
-            src="/images/transporte.jpg"
+            src={publicUrl("images/transporte.jpg")}
             alt="Retroescavadeira JCB pronta para entrega"
-            className="mt-8 h-56 w-full rounded-3xl object-cover sm:h-72"
+            className="h-40 w-full rounded-3xl object-cover md:mt-8 sm:h-72"
           />
           <img
-            src="/images/entrega.jpg"
+            src={publicUrl("images/entrega.jpg")}
             alt="Escavadeira Komatsu sendo transportada"
-            className="h-44 w-full rounded-3xl object-cover sm:h-56"
+            className="h-36 w-full rounded-3xl object-cover sm:h-56"
           />
           <img
-            src="/images/retro-obra.jpg"
+            src={publicUrl("images/retro-obra.jpg")}
             alt="Retroescavadeira em serviço interno"
-            className="h-44 w-full rounded-3xl object-cover sm:h-56"
+            className="h-36 w-full rounded-3xl object-cover sm:h-56"
           />
         </div>
       </div>

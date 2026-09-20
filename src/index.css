@@ -19,7 +19,7 @@
 
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 section[id] {
@@ -28,11 +28,16 @@ section[id] {
 
 body {
   margin: 0;
-  overflow-x: hidden;
+  overflow-x: clip;
   font-family: var(--font-sans);
   color: var(--color-ink);
   background: var(--color-paper);
   -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-width: 0;
+  max-width: 100%;
 }
 
 ::selection {
@@ -53,6 +58,7 @@ body {
   font-family: var(--font-display);
   letter-spacing: 0.01em;
   text-transform: uppercase;
+  overflow-wrap: anywhere;
 }
 
 .section-kicker {
@@ -64,6 +70,8 @@ body {
 }
 
 input,
-textarea {
+textarea,
+select {
   font: inherit;
+  font-size: 16px;
 }

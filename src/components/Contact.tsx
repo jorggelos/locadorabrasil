@@ -39,14 +39,14 @@ export function Contact({ selectedMachine }: ContactProps) {
   }
 
   return (
-    <section id="contato" className="relative overflow-hidden bg-blue-ink py-20 text-white sm:py-24">
+    <section id="contato" className="relative overflow-hidden bg-blue-ink pt-16 pb-24 text-white sm:py-24">
       <div className="absolute -right-24 -top-24 size-80 rounded-full bg-gold/15 blur-3xl" />
       <div className="absolute -bottom-24 -left-16 size-72 rounded-full bg-green/30 blur-3xl" />
 
-      <div className="relative mx-auto grid max-w-6xl gap-10 px-5 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-        <div>
+      <div className="relative mx-auto grid min-w-0 max-w-6xl gap-10 px-4 sm:px-5 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+        <div className="min-w-0">
           <p className="section-kicker text-gold-bright">Fale conosco</p>
-          <h2 className="display mt-3 text-4xl leading-none sm:text-6xl">
+          <h2 className="display mt-3 text-[2.15rem] leading-none sm:text-6xl">
             Conte a obra. A gente responde no WhatsApp.
           </h2>
           <p className="mt-5 max-w-md text-base leading-relaxed text-white/80">
@@ -54,7 +54,7 @@ export function Contact({ selectedMachine }: ContactProps) {
             Locadora Brasil — pronto para orçamento de máquina, terraplenagem ou demolição.
           </p>
 
-          <ul className="mt-8 space-y-4 text-sm">
+          <ul className="mt-8 space-y-4 text-sm [overflow-wrap:anywhere]">
             <li className="flex items-start gap-3">
               <MapPin className="mt-0.5 size-5 text-gold-bright" />
               <a href={company.mapsUrl} className="hover:text-gold-bright" target="_blank" rel="noreferrer">
@@ -90,7 +90,7 @@ export function Contact({ selectedMachine }: ContactProps) {
 
         <form
           onSubmit={handleSubmit}
-          className="rounded-3xl bg-paper p-6 text-ink shadow-2xl sm:p-8"
+          className="scroll-mt-24 rounded-3xl bg-paper p-5 text-ink shadow-2xl sm:p-8"
         >
           <label className="block text-sm font-bold">
             Nome completo
@@ -101,7 +101,7 @@ export function Contact({ selectedMachine }: ContactProps) {
               value={form.name}
               onChange={(e) => setForm({ ...form, name: e.target.value })}
               placeholder="Seu nome"
-              className="mt-2 w-full rounded-2xl border border-line bg-white px-4 py-3 font-medium outline-none ring-gold transition focus:ring-2"
+              className="mt-2 min-h-12 w-full rounded-2xl border border-line bg-white px-4 py-3 text-base font-medium outline-none ring-gold transition focus:ring-2"
             />
           </label>
 
@@ -115,7 +115,7 @@ export function Contact({ selectedMachine }: ContactProps) {
               value={form.email}
               onChange={(e) => setForm({ ...form, email: e.target.value })}
               placeholder="voce@email.com"
-              className="mt-2 w-full rounded-2xl border border-line bg-white px-4 py-3 font-medium outline-none ring-gold transition focus:ring-2"
+              className="mt-2 min-h-12 w-full rounded-2xl border border-line bg-white px-4 py-3 text-base font-medium outline-none ring-gold transition focus:ring-2"
             />
           </label>
 
@@ -130,7 +130,7 @@ export function Contact({ selectedMachine }: ContactProps) {
               value={form.whatsapp}
               onChange={(e) => setForm({ ...form, whatsapp: maskWhatsApp(e.target.value) })}
               placeholder="(31) 99999-0000"
-              className="mt-2 w-full rounded-2xl border border-line bg-white px-4 py-3 font-medium outline-none ring-gold transition focus:ring-2"
+              className="mt-2 min-h-12 w-full rounded-2xl border border-line bg-white px-4 py-3 text-base font-medium outline-none ring-gold transition focus:ring-2"
             />
           </label>
 
@@ -143,13 +143,13 @@ export function Contact({ selectedMachine }: ContactProps) {
               value={form.message}
               onChange={(e) => setForm({ ...form, message: e.target.value })}
               placeholder="Qual máquina, prazo e endereço da obra?"
-              className="mt-2 w-full resize-y rounded-2xl border border-line bg-white px-4 py-3 font-medium outline-none ring-gold transition focus:ring-2"
+              className="mt-2 w-full resize-y rounded-2xl border border-line bg-white px-4 py-3 text-base font-medium outline-none ring-gold transition focus:ring-2"
             />
           </label>
 
           <button
             type="submit"
-            className="mt-6 w-full rounded-full bg-gold py-3.5 text-sm font-extrabold text-ink transition hover:bg-gold-bright"
+            className="mt-6 min-h-12 w-full rounded-full bg-gold py-3.5 text-sm font-extrabold text-ink transition hover:bg-gold-bright"
           >
             Enviar mensagem
           </button>

@@ -1,6 +1,7 @@
 import { Menu, X } from "lucide-react"
 import { useEffect, useState } from "react"
 import { nav } from "../content"
+import { publicUrl } from "../lib/asset"
 
 export function Header() {
   const [open, setOpen] = useState(false)
@@ -28,12 +29,12 @@ export function Header() {
           : "bg-transparent"
       }`}
     >
-      <div className="mx-auto flex h-[4.5rem] max-w-6xl items-center justify-between px-5">
-        <a href="#inicio" className="flex items-center" onClick={() => setOpen(false)}>
+      <div className="mx-auto flex h-[4.5rem] max-w-6xl items-center justify-between gap-3 px-4 sm:px-5">
+        <a href="#inicio" className="min-w-0 flex items-center" onClick={() => setOpen(false)}>
           <img
-            src="/images/logo.jpg"
+            src={publicUrl("images/logo.jpg")}
             alt="Locadora Brasil"
-            className="h-10 w-auto max-w-[210px] object-contain sm:h-12 sm:max-w-[260px]"
+            className="h-9 w-auto max-w-[min(210px,58vw)] object-contain sm:h-12 sm:max-w-[260px]"
           />
         </a>
 
@@ -73,13 +74,13 @@ export function Header() {
       </div>
 
       {open && (
-        <div className="border-t border-line bg-paper px-5 py-6 lg:hidden">
-          <nav className="flex flex-col gap-4">
+        <div className="border-t border-line bg-paper px-5 py-6 pb-[max(1.5rem,env(safe-area-inset-bottom))] lg:hidden">
+          <nav className="flex flex-col gap-1">
             {nav.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
-                className="display text-2xl text-ink"
+                className="display py-2 text-2xl text-ink"
                 onClick={() => setOpen(false)}
               >
                 {item.label}
@@ -88,7 +89,7 @@ export function Header() {
             <a
               href="#contato"
               onClick={() => setOpen(false)}
-              className="mt-2 inline-flex items-center justify-center rounded-full bg-gold px-5 py-3 text-sm font-extrabold text-ink"
+              className="mt-3 inline-flex min-h-12 items-center justify-center rounded-full bg-gold px-5 py-3 text-sm font-extrabold text-ink"
             >
               Pedir orçamento
             </a>

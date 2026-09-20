@@ -1,24 +1,25 @@
 import { stats, todayBoard } from "../content"
+import { publicUrl } from "../lib/asset"
 
 export function Hero() {
   return (
     <section id="inicio" className="relative max-w-full overflow-hidden">
       <img
-        src="/images/hero.jpg"
+        src={publicUrl("images/hero.jpg")}
         alt="Escavadeira em operação carregando caminhão"
         className="absolute inset-0 h-full w-full object-cover"
       />
       <div className="absolute inset-0 bg-gradient-to-r from-[#0c1a12]/92 via-[#12301c]/78 to-[#1e56c9]/25" />
       <div className="absolute inset-y-0 right-0 hidden w-1/3 bg-[radial-gradient(circle_at_top,rgba(232,163,23,0.28),transparent_60%)] lg:block" />
 
-      <div className="relative mx-auto grid w-full min-w-0 max-w-6xl gap-10 px-5 pb-16 pt-32 lg:grid-cols-[1.1fr_0.9fr] lg:items-end lg:pb-20 lg:pt-40">
-        <div className="min-w-0 max-w-[21rem] sm:max-w-none">
+      <div className="relative mx-auto grid w-full min-w-0 max-w-6xl gap-8 px-4 pb-14 pt-28 sm:gap-10 sm:px-5 sm:pb-16 sm:pt-32 lg:grid-cols-[1.1fr_0.9fr] lg:items-end lg:pb-20 lg:pt-40">
+        <div className="min-w-0">
           <p className="section-kicker text-gold-bright">Locação de máquinas pesadas</p>
-          <h1 className="display mt-4 text-[2.2rem] leading-[0.95] text-white sm:text-[3.15rem] lg:text-7xl">
+          <h1 className="display mt-4 text-[2.15rem] leading-[0.95] text-white sm:text-[3.15rem] lg:text-7xl">
             Sua obra, finalmente
             <span className="block">com a força certa.</span>
           </h1>
-          <p className="mt-6 text-base leading-relaxed text-white/85 sm:max-w-lg sm:text-lg">
+          <p className="mt-6 text-base leading-relaxed text-pretty text-white/85 sm:max-w-lg sm:text-lg">
             Há 50 anos a Locadora Brasil leva máquina pesada até o canteiro: escavadeira,
             retroescavadeira, pá e basculante, com entrega e terraplenagem em Contagem
             e na região.
@@ -26,13 +27,13 @@ export function Hero() {
           <div className="mt-8 flex flex-wrap gap-3">
             <a
               href="#maquinas"
-              className="rounded-full bg-gold px-6 py-3 text-sm font-extrabold text-ink shadow-[0_10px_24px_rgba(232,163,23,0.35)] transition hover:bg-gold-bright"
+              className="inline-flex min-h-12 items-center rounded-full bg-gold px-6 py-3 text-sm font-extrabold text-ink shadow-[0_10px_24px_rgba(232,163,23,0.35)] transition hover:bg-gold-bright"
             >
               Ver máquinas
             </a>
             <a
               href="#contato"
-              className="rounded-full border border-white/30 bg-white/10 px-6 py-3 text-sm font-extrabold text-white backdrop-blur-sm transition hover:bg-white/20"
+              className="inline-flex min-h-12 items-center rounded-full border border-white/30 bg-white/10 px-6 py-3 text-sm font-extrabold text-white backdrop-blur-sm transition hover:bg-white/20"
             >
               Fale conosco
             </a>
@@ -62,17 +63,17 @@ export function Hero() {
               </li>
             ))}
           </ul>
-          <p className="mt-4 rounded-2xl bg-gold/15 px-4 py-3 text-sm font-semibold leading-relaxed text-gold-bright [overflow-wrap:anywhere]">
+          <p className="mt-4 rounded-2xl bg-gold/15 px-4 py-3 pr-16 text-sm font-semibold leading-relaxed text-gold-bright sm:pr-4">
             Lembrete da operação: a máquina chega no horário combinado.
           </p>
         </aside>
       </div>
 
       <div className="relative border-t border-white/10 bg-[#0c1a12]/80">
-        <div className="mx-auto grid w-full min-w-0 max-w-6xl grid-cols-2 sm:grid-cols-4">
+        <div className="mx-auto grid w-full min-w-0 max-w-6xl grid-cols-2 lg:grid-cols-4">
           {stats.map((item) => (
-            <div key={item.label} className="px-5 py-6">
-              <p className="display text-3xl text-gold-bright">{item.value}</p>
+            <div key={item.label} className="min-w-0 px-4 py-5 sm:px-5 sm:py-6">
+              <p className="display text-2xl text-gold-bright sm:text-3xl">{item.value}</p>
               <p className="mt-1 text-sm text-white/70">{item.label}</p>
             </div>
           ))}
