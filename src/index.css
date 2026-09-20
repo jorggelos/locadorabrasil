@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Barlow Condensed", "Arial Narrow", sans-serif;
+  --font-sans: "Manrope", "Segoe UI", sans-serif;
+
+  --color-blue: #1e56c9;
+  --color-blue-ink: #143a8c;
+  --color-green: #2c6b3a;
+  --color-green-deep: #1c4a28;
+  --color-gold: #e8a317;
+  --color-gold-bright: #f2b93a;
+  --color-ink: #121826;
+  --color-muted: #5c6573;
+  --color-sand: #f3f0e8;
+  --color-paper: #faf8f3;
+  --color-line: #e4dfd3;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+section[id] {
+  scroll-margin-top: 5.5rem;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  font-family: var(--font-sans);
+  color: var(--color-ink);
+  background: var(--color-paper);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: #e8a317;
+  color: #121826;
+}
+
+.hazard-bar {
+  height: 10px;
+  background: repeating-linear-gradient(
+    -45deg,
+    #e8a317 0 10px,
+    #1a1a1a 10px 20px
+  );
+}
+
+.display {
+  font-family: var(--font-display);
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+
+.section-kicker {
+  font-family: var(--font-display);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.75rem;
+}
+
+input,
+textarea {
+  font: inherit;
+}
