@@ -54,38 +54,40 @@ export function Contact({ selectedMachine }: ContactProps) {
             Locadora Brasil — pronto para orçamento de máquina, terraplenagem ou demolição.
           </p>
 
-          <ul className="mt-8 space-y-4 text-sm [overflow-wrap:anywhere]">
+          <address className="mt-8 not-italic">
+          <ul className="space-y-4 text-sm [overflow-wrap:anywhere]">
             <li className="flex items-start gap-3">
-              <MapPin className="mt-0.5 size-5 text-gold-bright" />
-              <a href={company.mapsUrl} className="hover:text-gold-bright" target="_blank" rel="noreferrer">
+              <MapPin className="mt-0.5 size-5 shrink-0 text-gold-bright" aria-hidden="true" />
+              <a href={company.mapsUrl} className="hover:text-gold-bright" target="_blank" rel="noopener noreferrer">
                 {company.address}
               </a>
             </li>
             <li className="flex items-start gap-3">
-              <Mail className="mt-0.5 size-5 text-gold-bright" />
+              <Mail className="mt-0.5 size-5 shrink-0 text-gold-bright" aria-hidden="true" />
               <a href={`mailto:${company.email}`} className="hover:text-gold-bright">
                 {company.email}
               </a>
             </li>
             <li className="flex items-start gap-3">
-              <svg className="mt-0.5 size-5 text-gold-bright" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <svg className="mt-0.5 size-5 shrink-0 text-gold-bright" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                 <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" strokeWidth="1.8" />
                 <circle cx="12" cy="12" r="3.6" stroke="currentColor" strokeWidth="1.8" />
                 <circle cx="17.2" cy="6.8" r="1" fill="currentColor" />
               </svg>
-              <a href={company.instagram} className="hover:text-gold-bright" target="_blank" rel="noreferrer">
+              <a href={company.instagram} className="hover:text-gold-bright" target="_blank" rel="noopener noreferrer">
                 {company.instagramHandle}
               </a>
             </li>
             {phones.map((phone) => (
               <li key={phone.e164} className="flex items-start gap-3">
-                <Phone className="mt-0.5 size-5 text-gold-bright" />
+                <Phone className="mt-0.5 size-5 shrink-0 text-gold-bright" aria-hidden="true" />
                 <a href={`tel:+${phone.e164}`} className="hover:text-gold-bright">
                   {phone.name}: {phone.display}
                 </a>
               </li>
             ))}
           </ul>
+          </address>
         </div>
 
         <form
@@ -155,7 +157,11 @@ export function Contact({ selectedMachine }: ContactProps) {
           </button>
 
           {sent && (
-            <p className="mt-4 rounded-2xl bg-green/10 px-4 py-3 text-sm font-semibold text-green-deep">
+            <p
+              role="status"
+              aria-live="polite"
+              className="mt-4 rounded-2xl bg-green/10 px-4 py-3 text-sm font-semibold text-green-deep"
+            >
               Abrimos o WhatsApp com a sua mensagem. Se a janela não aparecer, libere os
               pop-ups e envie de novo.
             </p>

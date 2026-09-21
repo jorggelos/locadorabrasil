@@ -40,22 +40,38 @@ export function About() {
         <div className="grid grid-cols-2 gap-3 sm:gap-4">
           <img
             src={publicUrl("images/terraplenagem.jpg")}
-            alt="Frente de terraplenagem com máquinas da Locadora Brasil"
+            alt="Frente de terraplenagem com máquinas da Locadora Brasil em Contagem"
+            width={1200}
+            height={1600}
+            loading="lazy"
+            decoding="async"
             className="h-40 w-full rounded-3xl object-cover sm:h-72"
           />
           <img
             src={publicUrl("images/transporte.jpg")}
-            alt="Retroescavadeira JCB pronta para entrega"
+            alt="Retroescavadeira JCB da Locadora Brasil pronta para entrega na obra"
+            width={1200}
+            height={1600}
+            loading="lazy"
+            decoding="async"
             className="h-40 w-full rounded-3xl object-cover md:mt-8 sm:h-72"
           />
           <img
             src={publicUrl("images/entrega.jpg")}
-            alt="Escavadeira Komatsu sendo transportada"
+            alt="Escavadeira Komatsu da Locadora Brasil sendo transportada em prancha"
+            width={1200}
+            height={1600}
+            loading="lazy"
+            decoding="async"
             className="h-36 w-full rounded-3xl object-cover sm:h-56"
           />
           <img
             src={publicUrl("images/retro-obra.jpg")}
-            alt="Retroescavadeira em serviço interno"
+            alt="Retroescavadeira da Locadora Brasil em serviço interno de demolição"
+            width={1200}
+            height={1600}
+            loading="lazy"
+            decoding="async"
             className="h-36 w-full rounded-3xl object-cover sm:h-56"
           />
         </div>

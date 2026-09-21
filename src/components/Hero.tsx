@@ -1,12 +1,18 @@
-import { stats, todayBoard } from "../content"
+import { getTodayBoard, stats } from "../content"
 import { publicUrl } from "../lib/asset"
 
 export function Hero() {
+  const todayBoard = getTodayBoard()
+
   return (
     <section id="inicio" className="relative max-w-full overflow-hidden">
       <img
         src={publicUrl("images/hero.jpg")}
-        alt="Escavadeira em operação carregando caminhão"
+        alt="Escavadeira da Locadora Brasil carregando caminhão em obra de terraplenagem"
+        width={1086}
+        height={1448}
+        fetchPriority="high"
+        decoding="async"
         className="absolute inset-0 h-full w-full object-cover"
       />
       <div className="absolute inset-0 bg-gradient-to-r from-[#0c1a12]/92 via-[#12301c]/78 to-[#1e56c9]/25" />
@@ -16,8 +22,8 @@ export function Hero() {
         <div className="min-w-0">
           <p className="section-kicker text-gold-bright">Locação de máquinas pesadas</p>
           <h1 className="display mt-4 text-[2.15rem] leading-[0.95] text-white sm:text-[3.15rem] lg:text-7xl">
-            Sua obra, finalmente
-            <span className="block">com a força certa.</span>
+            Terraplenagem e locação
+            <span className="block">de máquinas pesadas.</span>
           </h1>
           <p className="mt-6 text-base leading-relaxed text-pretty text-white/85 sm:max-w-lg sm:text-lg">
             Há 50 anos a Locadora Brasil leva máquina pesada até o canteiro: escavadeira,
@@ -42,13 +48,16 @@ export function Hero() {
 
         <aside className="w-full min-w-0 max-w-full overflow-hidden rounded-3xl border border-white/15 bg-[#0f1c14]/70 p-4 shadow-2xl backdrop-blur-md sm:p-5">
           <div className="mb-4 flex items-center justify-between text-white/70">
-            <p className="text-sm font-semibold">Painel · Hoje</p>
+            <p className="text-sm font-semibold">
+              Painel · Hoje
+              <span className="font-medium text-white/55"> · {todayBoard.weekday}</span>
+            </p>
             <span className="size-2 rounded-full bg-gold" />
           </div>
           <ul className="space-y-3">
-            {todayBoard.map((row) => (
+            {todayBoard.rows.map((row) => (
               <li
-                key={row.time}
+                key={`${todayBoard.weekday}-${row.time}-${row.machine}`}
                 className="rounded-2xl border border-white/10 bg-white/5 px-3 py-3 sm:px-4"
               >
                 <p className="text-sm font-bold text-white">
@@ -64,7 +73,7 @@ export function Hero() {
             ))}
           </ul>
           <p className="mt-4 rounded-2xl bg-gold/15 px-4 py-3 pr-16 text-sm font-semibold leading-relaxed text-gold-bright sm:pr-4">
-            Lembrete da operação: a máquina chega no horário combinado.
+            {todayBoard.reminder}
           </p>
         </aside>
       </div>

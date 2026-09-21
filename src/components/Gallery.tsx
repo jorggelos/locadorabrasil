@@ -2,7 +2,7 @@ import { gallery } from "../content"
 
 export function Gallery() {
   return (
-    <section className="bg-paper py-16 sm:py-24">
+    <section id="galeria" className="bg-paper py-16 sm:py-24">
       <div className="mx-auto min-w-0 max-w-6xl px-4 sm:px-5">
         <div className="max-w-2xl">
           <p className="section-kicker text-gold">Na obra</p>
@@ -16,6 +16,10 @@ export function Gallery() {
               key={shot.src}
               src={shot.src}
               alt={shot.alt}
+              width={800}
+              height={560}
+              loading="lazy"
+              decoding="async"
               className={`h-36 w-full rounded-3xl object-cover sm:h-56 ${
                 index === 0 ? "md:col-span-2 md:h-72" : ""
               }`}

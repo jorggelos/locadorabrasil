@@ -17,6 +17,23 @@
   --color-line: #e4dfd3;
 }
 
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -100px;
+  z-index: 100;
+  border-radius: 999px;
+  background: var(--color-gold);
+  color: var(--color-ink);
+  padding: 0.65rem 1.1rem;
+  font-size: 0.875rem;
+  font-weight: 800;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
 html {
   scroll-behavior: smooth;
   overflow-x: clip;

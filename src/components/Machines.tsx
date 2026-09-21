@@ -32,7 +32,11 @@ export function Machines({ onRequest }: MachinesProps) {
               <div className="relative h-52 overflow-hidden">
                 <img
                   src={machine.image}
-                  alt={machine.name}
+                  alt={machine.alt}
+                  width={800}
+                  height={520}
+                  loading="lazy"
+                  decoding="async"
                   className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#163522] to-transparent" />
@@ -56,7 +60,7 @@ export function Machines({ onRequest }: MachinesProps) {
                   className="mt-5 inline-flex min-h-11 items-center gap-2 text-sm font-extrabold text-gold-bright transition hover:text-white"
                 >
                   Solicitar esta máquina
-                  <ArrowUpRight size={16} />
+                  <ArrowUpRight size={16} aria-hidden="true" />
                 </button>
               </div>
             </article>

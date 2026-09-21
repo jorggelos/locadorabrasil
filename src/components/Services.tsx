@@ -7,7 +7,7 @@ export function Services() {
         <div className="max-w-2xl">
           <p className="section-kicker text-blue">Por que Locadora Brasil</p>
           <h2 className="display mt-3 text-[2.15rem] leading-none text-ink sm:text-6xl">
-            Operação que acompanha o ritmo da obra.
+            Locação de máquinas, terraplenagem e demolição.
           </h2>
           <p className="mt-5 text-base text-muted sm:text-lg">
             Simplicidade para quem contrata, máquina certa para quem executa — locação,

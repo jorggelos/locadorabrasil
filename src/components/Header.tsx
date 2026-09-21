@@ -33,12 +33,14 @@ export function Header() {
         <a href="#inicio" className="min-w-0 flex items-center" onClick={() => setOpen(false)}>
           <img
             src={publicUrl("images/logo.jpg")}
-            alt="Locadora Brasil"
+            alt="Logo da Locadora Brasil, locação de máquinas pesadas"
+            width={1600}
+            height={395}
             className="h-9 w-auto max-w-[min(210px,58vw)] object-contain sm:h-12 sm:max-w-[260px]"
           />
         </a>
 
-        <nav className="hidden items-center gap-7 lg:flex">
+        <nav className="hidden items-center gap-7 lg:flex" aria-label="Principal">
           {nav.map((item) => (
             <a
               key={item.href}
@@ -67,15 +69,17 @@ export function Header() {
               : "border border-white/25 bg-white/10 text-white"
           }`}
           aria-label={open ? "Fechar menu" : "Abrir menu"}
+          aria-expanded={open}
+          aria-controls="menu-mobile"
           onClick={() => setOpen((v) => !v)}
         >
-          {open ? <X size={20} /> : <Menu size={20} />}
+          {open ? <X size={20} aria-hidden="true" /> : <Menu size={20} aria-hidden="true" />}
         </button>
       </div>
 
       {open && (
         <div className="border-t border-line bg-paper px-5 py-6 pb-[max(1.5rem,env(safe-area-inset-bottom))] lg:hidden">
-          <nav className="flex flex-col gap-1">
+          <nav id="menu-mobile" className="flex flex-col gap-1" aria-label="Menu mobile">
             {nav.map((item) => (
               <a
                 key={item.href}

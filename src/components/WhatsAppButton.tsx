@@ -11,8 +11,8 @@ export function WhatsAppButton() {
     <a
       href={url}
       target="_blank"
-      rel="noreferrer"
-      aria-label="Falar no WhatsApp"
+      rel="noopener noreferrer"
+      aria-label="Falar com a Locadora Brasil no WhatsApp"
       className="fixed right-4 bottom-[max(1rem,env(safe-area-inset-bottom))] z-40 inline-flex size-12 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_12px_30px_rgba(37,211,102,0.45)] transition hover:scale-105 sm:right-5 sm:size-14"
     >
       <svg viewBox="0 0 24 24" className="size-7 fill-current" aria-hidden="true">

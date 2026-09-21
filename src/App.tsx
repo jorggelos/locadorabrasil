@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { About } from "./components/About"
 import { Contact } from "./components/Contact"
 import { Footer } from "./components/Footer"
@@ -9,9 +9,14 @@ import { HowItWorks } from "./components/HowItWorks"
 import { Machines } from "./components/Machines"
 import { Services } from "./components/Services"
 import { WhatsAppButton } from "./components/WhatsAppButton"
+import { site } from "./seo"
 
 function App() {
   const [selectedMachine, setSelectedMachine] = useState("")
+
+  useEffect(() => {
+    document.title = site.title
+  }, [])
 
   function requestMachine(name: string) {
     setSelectedMachine(name)
@@ -20,8 +25,11 @@ function App() {
 
   return (
     <>
+      <a href="#conteudo" className="skip-link">
+        Ir para o conteúdo
+      </a>
       <Header />
-      <main>
+      <main id="conteudo">
         <Hero />
         <About />
         <Services />
